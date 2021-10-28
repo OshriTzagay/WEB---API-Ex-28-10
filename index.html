@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB-API</title>
+</head>
+
+<style>
+    body{
+        background-color: brown;
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    h1{
+        font-size: 80px;
+
+    }
+    .divs{
+        border: 1px solid black;
+    }
+    button{
+        margin-left: 55px;
+    }
+  #selector{
+      font-size: larger;
+  }
+</style>
+<body>
+    <center>
+        <h1>WEB-API #1 Lesson</h1>
+        <div id="printDiv"></div>
+        <br>
+        <form id="theForm">
+            <select name="selector" id="selector">
+                <option value="users">Users</option>
+                <option value="albums">Albums</option>
+                <option value="todos">Todos</option>
+                <option value="posts">posts</option>
+                <option value="photos">Photos</option>
+                <option value="comments">Comments</option>
+
+
+            </select><br><br>
+    <label for="">First Name:</label>
+    <input type="text" id="firstnameInput"><br><br>
+    <label for="">ID:</label>
+    <input type="text" id="idInput"><br><br>
+    <label for="">Phone:</label>
+    <input type="text" id="phoneInput"><br><br>
+    <button type="button" id="btn">Send To API</button>
+    
+    
+    
+    
+        </form>
+    </center><hr>
+    <!-- <div id="UsersDiv"></div> -->
+    <script src="main.js"></script>
+</body>
+</html>
