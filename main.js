@@ -204,7 +204,6 @@
 // addToUsers().then(response=>response.json())
 // .then(res=>console.log(res))
 
-
 // //!Ex 14 !!//
 
 // // function GernarFunc (api,obj){
@@ -235,46 +234,67 @@
 
 //!Ex 15 !!//
 class User {
-    fname;
-    id;
-    phone;
-    constructor(fname,id,phone){
-        this.fname = fname;
-        this.id = id;
-        this.phone = phone;
+  fname;
+  id;
+  phone;
+  constructor(fname, id, phone) {
+    this.fname = fname;
+    this.id = id;
+    this.phone = phone;
+  }
+}
+btn.onclick = () => {
+  let somUser = new User(firstnameInput.value, idInput.value, phoneInput.value);
+  let option6 = {
+    method: "Post",
+    body: JSON.stringify(somUser),
+  };
+
+  async function forTheSwitch(api) {
+    try {
+      return await fetch(`${api}`, option6);
+    } catch (error) {
+      return error;
     }
-}
-btn.onclick = ()=>{
-let somUser = new User(firstnameInput.value,idInput.value,phoneInput.value)
-let option6 = {
-    method:'Post',
-    body:JSON.stringify(somUser)
-}
-
-async function forTheSwitch(api){
-try {
-    return await fetch(`${api}`,option6) 
-} catch (error) {
-    return error;
-}
-}
-switch (selector.value) {
+  }
+  switch (selector.value) {
     case "users":
-forTheSwitch("https://jsonplaceholder.typicode.com/users/").then(response=>response.json()).then(res=>console.log(res))
-        
-        break;
-        case "albums":
-forTheSwitch("https://jsonplaceholder.typicode.com/albums/").then(response=>response.json()).then(res=>console.log(res))
-        
-            break;
-            case "comments":
-forTheSwitch("https://jsonplaceholder.typicode.com/comments/").then(response=>response.json()).then(res=>console.log(res))
+      forTheSwitch("https://jsonplaceholder.typicode.com/users/")
+        .then((response) => response.json())
+        .then((res) => console.log(res));
 
-        
-        break;
+      break;
+    case "albums":
+      forTheSwitch("https://jsonplaceholder.typicode.com/albums/")
+        .then((response) => response.json())
+        .then((res) => console.log(res));
+
+      break;
+    case "comments":
+      forTheSwitch("https://jsonplaceholder.typicode.com/comments/")
+        .then((response) => response.json())
+        .then((res) => console.log(res));
+
+      break;
+    case "todos":
+      forTheSwitch("https://jsonplaceholder.typicode.com/todos/")
+        .then((response) => response.json())
+        .then((res) => console.log(res));
+
+      break;
+    case "posts":
+      forTheSwitch("https://jsonplaceholder.typicode.com/posts/")
+        .then((response) => response.json())
+        .then((res) => console.log(res));
+
+      break;
+    case "photos":
+      forTheSwitch("https://jsonplaceholder.typicode.com/photos/")
+        .then((response) => response.json())
+        .then((res) => console.log(res));
+
+      break;
     default:
-        break;
-}
-
-}
-
+      break;
+  }
+};
